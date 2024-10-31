@@ -1,0 +1,91 @@
+/* Base styles and variables for themes */
+:root {
+    --bg-color: #fdf8e2;
+    --text-color: #333;
+    --accent-color: #f4b400;
+}
+
+body.dark-mode {
+    --bg-color: #1a1a1a;
+    --text-color: #fdf8e2;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: var(--accent-color);
+}
+
+.product-showcase {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: 50px 0;
+}
+
+.honey-jar, .honeycomb, .bee {
+    max-width: 200px;
+    position: absolute;
+}
+
+#bee1 {
+    top: 20px;
+    left: 50px;
+    animation: bee-fly 3s infinite ease-in-out;
+}
+
+#bee2 {
+    top: 50px;
+    right: 50px;
+    animation: bee-fly 4s infinite ease-in-out;
+}
+
+@keyframes bee-fly {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.shop-button {
+    background-color: var(--accent-color);
+    border: none;
+    padding: 15px 30px;
+    color: var(--bg-color);
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.shop-button:hover {
+    transform: scale(1.05);
+}
+
+/* Dark mode toggle button */
+#modeToggle {
+    background-color: transparent;
+    border: 2px solid var(--text-color);
+    padding: 10px 20px;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: color 0.3s, border-color 0.3s;
+}
+
+#modeToggle:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
